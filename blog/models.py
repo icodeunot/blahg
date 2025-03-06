@@ -2,6 +2,8 @@ from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from taggit.managers import TaggableManager
+
 
 # Models for the blog application
     
@@ -37,6 +39,7 @@ class Post(models.Model):
     )
     objects = models.Manager()
     published = PublihedManager()
+    tags = TaggableManager()
 
     class Meta:
         ordering = ['-publish']
@@ -57,6 +60,7 @@ class Post(models.Model):
                 self.slug
             ],
         )
+    
     
 class Comment(models.Model):
     post = models.ForeignKey(

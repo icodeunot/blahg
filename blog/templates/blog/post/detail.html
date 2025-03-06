@@ -3,6 +3,10 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
+    <!-- Adding a back button -->
+    <p>
+        <a href="javascript:history.back()">Back to list</a>
+    </p>
     <h1>{{ post.title }}</h1>
     <p class="date">
         Published {{ post.publish}} by {{ post.author }}
