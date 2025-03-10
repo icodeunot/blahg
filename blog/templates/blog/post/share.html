@@ -3,9 +3,9 @@
 {% block title %}Share a post{% endblock %}
 
 {% block content %}
-        <!-- Adding a back button -->
+    <!-- Adding a back button -->
     <p>
-        <a href="javascript:history.back()">Back to post</a>
+        <a href="{% url 'blog:post_list' %}">Back to list</a>
     </p>
     {% if sent %}
         <h1>E-mail successfully sent</h1>
